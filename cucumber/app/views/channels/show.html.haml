@@ -1,0 +1,16 @@
+%h2= @channel.title
+
+%div#video
+  %iframe{:allowscriptaccess => "always", :allowFullscreen => "true", :frameBorder => "0", :height => "430", :src => @channel.embed_url, :title => "TWITCH", :width => "640"}
+  %iframe{:frameborder => "0", :scrolling => "no", :id => "chat_embed", :src => "http://twitch.tv/chat/embed?channel=" + @channel.title + "&amp;popout_chat=true", :height =>"600", :width =>"250"}
+
+
+
+-@slices.each do |sl|
+  .slice
+    -if sl.video_url?
+      -link_to= "#{sl.start_time} , #{sl.end_time}", sl.video_url
+    -else
+      %li= "#{sl.start_time} , #{sl.end_time}: #{sl.broadcast_id}"
+    
+

@@ -1,0 +1,6 @@
+
+%h2 Main Page
+%div#content
+  - @channels.each do |ch|
+    .channel
+      =link_to ch.title, channel_path(name: ch.title)

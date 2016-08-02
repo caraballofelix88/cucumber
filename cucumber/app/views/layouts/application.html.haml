@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=US-ASCII", "http-equiv" => "Content-Type"}/
+    %title Cucumber
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %div#header
+      %div#title
+        =link_to root_path do
+          %div
+            %h1 Cucumber
+            %h2 Kappa snacks
+
+
+    = yield
+
+  %div#footer
+    %div
+      page footer here
+
